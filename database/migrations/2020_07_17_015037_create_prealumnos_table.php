@@ -19,13 +19,13 @@ class CreatePrealumnosTable extends Migration
             $table->string('prealum_identificacion',8)->unique();
             $table->string('prealum_ape',70);
             $table->string('prealum_nom',70);
-            $table->unsignedBigInteger('prealumn_nacionalidad_id')->index();
+            $table->unsignedBigInteger('prealum_nacionalidad_id')->index();
             $table->integer('prealum_sexo');
             $table->date('prealum_fnac');
             $table->integer('prealum_gradopostula');
             $table->integer('prealum_est')->default(1);
 
-            $table->foreign('prealumn_nacionalidad_id')->references('pais_id')
+            $table->foreign('prealum_nacionalidad_id')->references('pais_id')
                 ->on('paises')
                 ->onDelete('cascade');
         });

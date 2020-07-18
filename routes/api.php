@@ -18,7 +18,8 @@ Route::middleware('auth:api', '')->get('/user', function (Request $request) {
 });
 
 Route::get('/paises','PaisesController@APIListPaises');
-Route::post('/save/prematricula','FormPreMatriculaController@APISavePreMatricula');
+Route::post('/save/preapoderado','APIsController@APISavePreApoderado');
+Route::post('/save/prealumano','APIsController@APISavePreAlumno');
 
 
 
