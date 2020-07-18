@@ -20,11 +20,11 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>70327395</td>
+                            <td>Juan</td>
+                            <td>Cubas Bravo</td>
+                            <td>Padre</td>
+                            <td>987654321</td>
                             <td>
                                 <a href="" title="Ver Preinscripcion" class="btn btn-sm btn-outline-info"><i class="fa fa-file-text"></i></a>
                             </td>
