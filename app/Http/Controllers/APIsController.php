@@ -6,6 +6,8 @@ use App\Prealumnos;
 use App\Preapoderados;
 use App\Prealumnos_Preapoderado;
 use Exception;
+use Goutte\Client;
+use GuzzleHttp\Client as GuzzleClient;
 use Illuminate\Http\Request;
 
 class APIsController extends Controller
@@ -58,5 +60,42 @@ class APIsController extends Controller
             ]);
         }
         return $dataPreAlumno->attributesToArray();
+    }
+
+    public function APIExtraerDatosDni(Request $request) {
+        try {
+            $goutteClient = new Client();
+            $guzzleClient = new GuzzleClient(array('timeout' => 60));
+            $goutteClient->setClient($guzzleClient);
+
+            $dni = $request->dni;
+            $api = 'https://eldni.com/buscar-por-dni?dni=';
+            $request_api = $api.$dni;
+
+            $crawler = $goutteClient->request('GET', $request_api);
+            $get_datos = $crawler->filter('tbody tr')->each(function ($node) {
+                $get_dni = $node->filter('th')->text();
+                $get_nombres = $node->filter('td')->text();
+                $array_nombres = explode(' ', $get_nombres);
+                $array_datos = explode(' ', $node->text());
+                $get_apellidos = '';
+                foreach ( $array_datos as $i) {
+                    if ($i != $get_dni && !in_array($i, $array_nombres)) {
+                        $get_apellidos = $get_apellidos.' '.$i;
+                    }
+                }
+                return response()->json([
+                    'dni' => trim($get_dni),
+                    'nombres' => trim($get_nombres),
+                    'apellidos' => trim($get_apellidos)
+                ])->getData();
+            });
+        } catch (Exception $exception) {
+            return response()->json([
+                'error' => true,
+                'msg' => 'Ocurrio un error al extraer datos. Ingrese datos manualmente'
+            ]);
+        }
+        return $get_datos;
     }
 }

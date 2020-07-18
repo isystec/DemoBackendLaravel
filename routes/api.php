@@ -20,6 +20,7 @@ Route::middleware('auth:api', '')->get('/user', function (Request $request) {
 Route::get('/paises','PaisesController@APIListPaises');
 Route::post('/save/preapoderado','APIsController@APISavePreApoderado');
 Route::post('/save/prealumano','APIsController@APISavePreAlumno');
+Route::get('/get/datos-dni','APIsController@APIExtraerDatosDni');
 
 
 
