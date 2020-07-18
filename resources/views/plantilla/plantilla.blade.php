@@ -87,6 +87,10 @@
               <a class="nav-link" href="{{route('home')}}">
                 <i class="nav-icon icon-home"></i> Inicio</a>
             </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{{url('preinscripciones')}}">
+                      <i class="nav-icon icon-home"></i> Pre-Inscripciones</a>
+              </li>
           </ul>
         </nav>
         <button class="sidebar-minimizer brand-minimizer" type="button"></button>

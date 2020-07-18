@@ -16,5 +16,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+//Rutas del Controlador
+Route::resource('preinscripciones','PreinscripcionesController');
 
 Route::get('/home', 'HomeController@index')->name('home');
