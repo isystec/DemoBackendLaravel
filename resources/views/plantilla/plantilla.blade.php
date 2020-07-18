@@ -58,9 +58,9 @@
         <li class="nav-item dropdown">
           <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
             <img class="img-avatar" src="{{asset('plantilla/img/avatars/6.jpg')}}" alt="admin@bootstrapmaster.com">
-          </a>  
+          </a>
           <div class="dropdown-menu dropdown-menu-right">
-            
+
             <div class="dropdown-header text-center">
               <strong>Cuenta</strong>
             </div>
@@ -112,7 +112,7 @@
     <script src="{{asset('plantilla/node_modules/pace-progress/pace.min.js')}}"></script>
     <script src="{{asset('plantilla/node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js')}}"></script>
     <script src="{{asset('plantilla/node_modules/@coreui/coreui/dist/js/coreui.min.js')}}"></script>
-    
+
     <!-- DataTable-->
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
 
