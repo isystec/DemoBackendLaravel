@@ -83,10 +83,10 @@
         <nav class="sidebar-nav">
           <ul class="nav">
             <li class="nav-title">Opciones</li>
-            <li class="nav-item">
+              <li class="nav-item">
               <a class="nav-link" href="{{route('home')}}">
                 <i class="nav-icon icon-home"></i> Inicio</a>
-            </li>
+              </li>
               <li class="nav-item">
                   <a class="nav-link" href="{{url('preinscripciones')}}">
                       <i class="nav-icon icon-home"></i> Pre-Inscripciones</a>

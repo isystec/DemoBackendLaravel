@@ -20,3 +20,7 @@ Auth::routes();
 Route::resource('preinscripciones','PreinscripcionesController');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Rutas de Preinscripciones
+//Route::get('preinscripciones/ver','PreinscripcionesController@ver');
+Route::get('ver','PreinscripcionesController@ver');

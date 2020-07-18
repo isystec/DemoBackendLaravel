@@ -26,7 +26,7 @@
                             <td>Padre</td>
                             <td>987654321</td>
                             <td>
-                                <a href="" title="Ver Preinscripcion" class="btn btn-sm btn-outline-info"><i class="fa fa-file-text"></i></a>
+                                <a href="{{url('ver')}}" title="Ver Preinscripcion" class="btn btn-sm btn-outline-info"><i class="fa fa-file-text"></i></a>
                             </td>
                         </tr>
                         </tbody>
