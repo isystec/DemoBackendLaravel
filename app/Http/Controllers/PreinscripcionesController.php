@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use App\Preapoderados;
+Use DB;
 
 class PreinscripcionesController extends Controller
 {
     public function index()
     {
-        return view('preinscripciones.index');
+        $data = DB::table('Preapoderados')->get();
+        return view('preinscripciones.index',['preapoderados'=>$data]);
     }
     public function create()
     {
@@ -38,5 +41,14 @@ class PreinscripcionesController extends Controller
     public function ver()
     {
         return view('preinscripciones.detalle');
+    }
+
+    public function prueba($id)
+    {
+        $data = DB::table('prealumnos_preapoderados')
+            ->join('prealumnos','prealumnos.prealum_id','prealumnos_preapoderados.prealumn_preapod_prealum_id')
+            ->where('prealumnos_preapoderados.prealumn_preapod_preapod_id','=',$id)
+            ->get();
+        print_r($data);
     }
 }

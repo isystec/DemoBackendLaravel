@@ -19,16 +19,18 @@
                         </tr>
                         </thead>
                         <tbody>
+                        @foreach($preapoderados as $preapod)
                         <tr>
-                            <td>70327395</td>
-                            <td>Juan</td>
-                            <td>Cubas Bravo</td>
-                            <td>Padre</td>
-                            <td>987654321</td>
+                            <td>{{$preapod->preapod_identificacion}}</td>
+                            <td>{{$preapod->preapod_ape}}</td>
+                            <td>{{$preapod->preapod_nom}}</td>
+                            <td></td>
+                            <td>{{$preapod->preapod_tel}}</td>
                             <td>
                                 <a href="{{url('ver')}}" title="Ver Preinscripcion" class="btn btn-sm btn-outline-info"><i class="fa fa-file-text"></i></a>
                             </td>
                         </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
