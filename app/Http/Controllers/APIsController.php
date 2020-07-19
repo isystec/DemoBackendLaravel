@@ -89,7 +89,8 @@ class APIsController extends Controller
                 return response()->json([
                     'dni' => trim($get_dni),
                     'nombres' => trim($get_nombres),
-                    'apellidos' => trim($get_apellidos)
+                    'apellidos' => trim($get_apellidos),
+                    'autor' => 'Alejandro Rodriguez Romero - https://www.linkedin.com/in/alejandro-rodriguez-romero/'
                 ])->getData();
             });
         } catch (Exception $exception) {
