@@ -13,7 +13,7 @@ class CreatePrealumnosPreapoderadosTable extends Migration
      */
     public function up()
     {
-        Schema::create('prealumnos__preapoderados', function (Blueprint $table) {
+        Schema::create('prealumnos_preapoderados', function (Blueprint $table) {
             $table->increments('prealumn_preapod_id');
             $table->unsignedInteger('prealumn_preapod_prealum_id')->index();
             $table->unsignedInteger('prealumn_preapod_preapod_id')->index();
