@@ -62,6 +62,7 @@ class APIsController extends Controller
         return $dataPreAlumno->attributesToArray();
     }
 
+    // Desarrollado por Alejandro Rodriguez Romero
     public function APIExtraerDatosDni(Request $request) {
         try {
             $goutteClient = new Client();
