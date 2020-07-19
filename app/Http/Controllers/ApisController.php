@@ -6,11 +6,12 @@ use App\Prealumnos;
 use App\Preapoderados;
 use App\Prealumnos_Preapoderado;
 use Exception;
+use Throwable;
 use Goutte\Client;
 use GuzzleHttp\Client as GuzzleClient;
 use Illuminate\Http\Request;
 
-class APIsController extends Controller
+class ApisController extends Controller
 {
     public function APISavePreApoderado(Request $request) {
         try {
@@ -64,7 +65,7 @@ class APIsController extends Controller
 
     // Desarrollado por Alejandro Rodriguez Romero
     // https://www.linkedin.com/in/alejandro-rodriguez-romero/
-    public function APIExtraerDatosDni(Request $request) {
+    public function APIGetDataDni(Request $request) {
         try {
             $goutteClient = new Client();
             $guzzleClient = new GuzzleClient(array('timeout' => 60));
@@ -100,5 +101,41 @@ class APIsController extends Controller
             ]);
         }
         return $get_datos;
+    }
+
+    public function APIExistIdentificacionPreApoderado(Request $request) {
+        try {
+            $identificacion = $request->preapod_identificacion;
+            $pre_apo = Preapoderados::query()->where("preapod_identificacion", $identificacion)->get();
+            $exist = false;
+            if ($pre_apo->first()->exists()) {
+                $exist = true;
+            }
+        } catch (Exception $exception) {
+            $exist = false;
+        } catch (Throwable $throwable) {
+            $exist = false;
+        }
+        return response()->json([
+           'exist' => $exist
+        ]);
+    }
+
+    public function APIExistIdentificacionPreAlumno(Request $request) {
+        try {
+            $identificacion = $request->preapod_identificacion;
+            $pre_alum = Prealumnos::query()->where("prealum_identificacion", $identificacion)->get();
+            $exist = false;
+            if ($pre_alum->first()->exists()) {
+                $exist = true;
+            }
+        } catch (Exception $exception) {
+            $exist = false;
+        } catch (Throwable $throwable) {
+            $exist = false;
+        }
+        return response()->json([
+           'exist' => $exist
+        ]);
     }
 }

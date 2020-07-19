@@ -18,9 +18,11 @@ Route::middleware('auth:api', '')->get('/user', function (Request $request) {
 });
 
 Route::get('/paises','PaisesController@APIListPaises');
-Route::post('/save/preapoderado','APIsController@APISavePreApoderado');
-Route::post('/save/prealumano','APIsController@APISavePreAlumno');
-Route::get('/get/datos-dni','APIsController@APIExtraerDatosDni');
+Route::post('/save/preapoderado','ApisController@APISavePreApoderado');
+Route::post('/save/prealumano','ApisController@APISavePreAlumno');
+Route::get('/get/datos-dni','ApisController@APIGetDataDni');
+Route::post('/valid/identificacion/preapoderado','ApisController@APIExistIdentificacionPreApoderado');
+Route::post('/valid/identificacion/prealumno','ApisController@APIExistIdentificacionPreAlumno');
 
 
 
