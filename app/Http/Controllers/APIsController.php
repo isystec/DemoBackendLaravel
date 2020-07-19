@@ -63,6 +63,7 @@ class APIsController extends Controller
     }
 
     // Desarrollado por Alejandro Rodriguez Romero
+    // https://www.linkedin.com/in/alejandro-rodriguez-romero/
     public function APIExtraerDatosDni(Request $request) {
         try {
             $goutteClient = new Client();
