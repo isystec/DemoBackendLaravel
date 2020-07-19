@@ -89,7 +89,15 @@
               </li>
               <li class="nav-item">
                   <a class="nav-link" href="{{url('preinscripciones')}}">
-                      <i class="nav-icon icon-home"></i> Pre-Inscripciones</a>
+                      <i class="nav-icon icon-home"></i>Pre-Inscripciones</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{{url('usuarios')}}">
+                      <i class="nav-icon icon-home"></i>Usuarios</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{{url('documentos')}}">
+                      <i class="nav-icon icon-home"></i>Documentos</a>
               </li>
           </ul>
         </nav>
