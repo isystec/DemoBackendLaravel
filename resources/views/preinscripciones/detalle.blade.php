@@ -32,84 +32,66 @@
                                                     <strong>Apoderados</strong> </div>
                                                 <div class="card-body">
                                                     <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
-                                                        <div class="form-group row">
-                                                            <label class="col-md-3 col-form-label" for="hf-email">Tipo de Documento</label>
-                                                            <div class="col-md-9">
-                                                                @if($preapod->preapod_tipodocumento==0)
-                                                                    <input class="form-control" value="Documento Nacional de Identidad" readonly>
-                                                                @elseif($preapod->preapod_tipodocumento==1)
-                                                                    <input class="form-control" value="Carnet de Extranjeria" readonly>
-                                                                @else
-                                                                    <input class="form-control" value="Pasaporte" readonly>
-                                                                @endif
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label class="col-md-3 col-form-label" for="hf-email">N° de Documento</label>
-                                                            <div class="col-md-9">
-                                                                <input class="form-control" value="{{$preapod->preapod_identificacion}}" readonly>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label class="col-md-3 col-form-label" for="hf-email">Nombres</label>
-                                                            <div class="col-md-9">
-                                                                <input class="form-control"value="{{$preapod->preapod_nom}}" readonly>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label class="col-md-3 col-form-label" for="hf-email">Apellidos</label>
-                                                            <div class="col-md-9">
-                                                                <input class="form-control" value="{{$preapod->preapod_ape}}" readonly>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label class="col-md-3 col-form-label" for="hf-email">Celular</label>
-                                                            <div class="col-md-9">
-                                                                <input class="form-control" value="{{$preapod->preapod_tel}}" readonly>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label class="col-md-3 col-form-label" for="hf-email">Correo</label>
-                                                            <div class="col-md-9">
-                                                                <input class="form-control" value="{{$preapod->preapod_email}}" readonly>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label class="col-md-3 col-form-label" for="hf-email">Sexo</label>
-                                                            <div class="col-md-9">
-                                                                <input class="form-control"value="{{$preapod->preapod_sexo}}" readonly>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label class="col-md-3 col-form-label" for="hf-email">Estado Civil</label>
-                                                            <div class="col-md-9">
-                                                                <input class="form-control" readonly>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label class="col-md-3 col-form-label" for="hf-email">Direccion</label>
-                                                            <div class="col-md-9">
-                                                                <input class="form-control" readonly>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label class="col-md-3 col-form-label" for="hf-email">Fecha de Nacimiento</label>
-                                                            <div class="col-md-9">
-                                                                <input class="form-control" value="{{$preapod->preapod_fnac}}" readonly>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label class="col-md-3 col-form-label" for="hf-email">Centro de Labores</label>
-                                                            <div class="col-md-9">
-                                                                <input class="form-control" readonly>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label class="col-md-3 col-form-label" for="hf-email">Solvencia Económica</label>
-                                                            <div class="col-md-9">
-                                                                <input class="form-control" readonly>
-                                                            </div>
-                                                        </div>
+                                                        <table class="table table-responsive-sm table-bordered">
+                                                            <tbody>
+                                                            <tr>
+                                                                <td style="font-variant: small-caps;"><b>Tipo de Documento</b></td>
+                                                                <td>
+                                                                    @if($preapod->preapod_tipodocumento==0)
+                                                                        Documento Nacional de Identidad
+                                                                    @elseif($preapod->preapod_tipodocumento==1)
+                                                                        Carnet de Extranjeria
+                                                                    @else
+                                                                        Pasaporte
+                                                                    @endif
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="font-variant: small-caps;" "><b>N° de Documento</b></td>
+                                                                <td>{{$preapod->preapod_identificacion}}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="font-variant: small-caps;"><b>Nombres</b></td>
+                                                                <td>{{$preapod->preapod_nom}}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="font-variant: small-caps;"><b>Apellidos</b></td>
+                                                                <td>{{$preapod->preapod_ape}}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="font-variant: small-caps;"><b>Celular</b></td>
+                                                                <td>{{$preapod->preapod_tel}}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="font-variant: small-caps;"><b>Correo</b></td>
+                                                                <td>{{$preapod->preapod_email}}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="font-variant: small-caps;"><b>Sexo</b></td>
+                                                                <td>{{$preapod->preapod_sexo}}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="font-variant: small-caps;"><b>Estado Civil</b></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="font-variant: small-caps;"><b>Direccion</b></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="font-variant: small-caps;"><b>Fecha de Nacimiento</b></td>
+                                                                <td>{{$preapod->preapod_fnac}}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="font-variant: small-caps;"><b>Centro de Labores</b></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="font-variant: small-caps;"><b>Solvencia Economica</b></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
                                                     </form>
                                                 </div>
                                             </div>
@@ -128,65 +110,56 @@
                                                             <strong>Alumnado:</strong>{{' '.$a->prealum_nom.' '.$a->prealum_ape}}</div>
                                                         <div class="card-body">
                                                             <form class="form-horizontal" action="" method="post">
-                                                                <div class="form-group row">
-                                                                    <label class="col-md-3 col-form-label" for="hf-email">Tipo de Documento</label>
-                                                                    <div class="col-md-9">
-                                                                        @if($preapod->preapod_tipodocumento==0)
-                                                                            <input class="form-control" value="Documento Nacional de Identidad" readonly>
-                                                                        @elseif($preapod->preapod_tipodocumento==1)
-                                                                            <input class="form-control" value="Carnet de Extranjeria" readonly>
-                                                                        @else
-                                                                            <input class="form-control" value="Pasaporte" readonly>
-                                                                        @endif
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row">
-                                                                    <label class="col-md-3 col-form-label" for="hf-email">Identificacion</label>
-                                                                    <div class="col-md-9">
-                                                                        <input class="form-control" value="{{$a->prealum_identificacion}}" readonly>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row">
-                                                                    <label class="col-md-3 col-form-label" for="hf-email">Apellidos</label>
-                                                                    <div class="col-md-9">
-                                                                        <input class="form-control" value="{{$a->prealum_ape}}" readonly>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row">
-                                                                    <label class="col-md-3 col-form-label" for="hf-email">Nombres</label>
-                                                                    <div class="col-md-9">
-                                                                        <input class="form-control" value="{{$a->prealum_nom}}" readonly>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row">
-                                                                    <label class="col-md-3 col-form-label" for="hf-email">Nacionalidad</label>
-                                                                    <div class="col-md-9">
-                                                                        <input class="form-control" value="{{$a->pais_nombre}}" readonly>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row">
-                                                                    <label class="col-md-3 col-form-label" for="hf-email">Sexo</label>
-                                                                    <div class="col-md-9">
-                                                                        @if($a->prealum_sexo=0)
-                                                                            <input class="form-control" value="Femenino" readonly>
-                                                                        @else
-                                                                            <input class="form-control" value="Masculino" readonly>
-                                                                        @endif
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row">
-                                                                    <label class="col-md-3 col-form-label" for="hf-email">Fecha de Nacimiento</label>
-                                                                    <div class="col-md-9">
-                                                                        <input class="form-control" value="{{$a->prealum_fnac}}" readonly>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row">
-                                                                    <label class="col-md-3 col-form-label" for="hf-email">Grado al que Postula</label>
-                                                                    <div class="col-md-9">
-                                                                        <input class="form-control" value="{{$a->prealum_gradopostula}}" readonly>
-                                                                    </div>
-                                                                </div>
-                                                                <hr>
+                                                                <table class="table table-responsive-sm table-bordered">
+                                                                    <tbody>
+                                                                    <tr>
+                                                                        <td style="font-variant: small-caps;"><b>Tipo de Documento</b></td>
+                                                                        <td>
+                                                                            @if($preapod->preapod_tipodocumento==0)
+                                                                                Documento Nacional de Identidad
+                                                                            @elseif($preapod->preapod_tipodocumento==1)
+                                                                                Carnet de Extranjeria
+                                                                            @else
+                                                                                Pasaporte
+                                                                            @endif
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="font-variant: small-caps;"><b>Identificacion</b></td>
+                                                                        <td>{{$a->prealum_identificacion}}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="font-variant: small-caps;"><b>Apellidos</b></td>
+                                                                        <td>{{$a->prealum_ape}}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="font-variant: small-caps;"><b>Nombres</b></td>
+                                                                        <td>{{$a->prealum_nom}}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="font-variant: small-caps;"><b>Nacionalidad</b></td>
+                                                                        <td>{{$a->pais_nombre}}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="font-variant: small-caps;"><b>Sexo</b></td>
+                                                                        <td>
+                                                                            @if($a->prealum_sexo=0)
+                                                                                Femenino
+                                                                            @else
+                                                                                Masculino
+                                                                            @endif
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="font-variant: small-caps;"><b>Fecha de Nacimiento</b></td>
+                                                                        <td>{{$a->prealum_fnac}}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="font-variant: small-caps;"><b>Grado al que Postula</b></td>
+                                                                        <td>{{$a->prealum_gradopostula}}</td>
+                                                                    </tr>
+                                                                    </tbody>
+                                                                </table>
                                                             </form>
                                                         </div>
                                                     </div>
