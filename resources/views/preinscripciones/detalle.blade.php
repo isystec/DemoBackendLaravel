@@ -47,7 +47,7 @@
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td style="font-variant: small-caps;" "><b>N° de Documento</b></td>
+                                                                <td style="font-variant: small-caps;"><b>N° de Documento</b></td>
                                                                 <td>{{$preapod->preapod_identificacion}}</td>
                                                             </tr>
                                                             <tr>

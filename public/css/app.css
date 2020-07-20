@@ -38,6 +38,10 @@
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+.joqtan td tr{
+    font-variant: small-caps;
+}
+
 *,
 *::before,
 *::after {
@@ -10927,4 +10931,5 @@ a.text-dark:focus {
     border-color: #dee2e6;
   }
 }
+
 
