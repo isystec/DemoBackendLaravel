@@ -38,11 +38,17 @@ class PreinscripcionesController extends Controller
     {
         //
     }
-    public function ver()
+    public function ver($id)
     {
-        return view('preinscripciones.detalle');
+        $prueba = Preapoderados::find($id);
+        $alumnos = DB::table('prealumnos_preapoderados')
+            ->join('prealumnos','prealumnos.prealum_id','prealumnos_preapoderados.prealumn_preapod_prealum_id')
+            ->join('paises','paises.pais_id','prealumnos.prealum_nacionalidad_id')
+            ->join('preapoderados','preapoderados.preapod_id','prealumnos_preapoderados.prealumn_preapod_preapod_id')
+            ->where('prealumnos_preapoderados.prealumn_preapod_preapod_id','=',$id)
+            ->get();
+        return view('preinscripciones.detalle',['alumnos' => $alumnos,'preapod'=> $prueba]);
     }
-
     public function prueba($id)
     {
         $data = DB::table('prealumnos_preapoderados')

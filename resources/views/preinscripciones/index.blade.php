@@ -27,7 +27,7 @@
                             <td></td>
                             <td>{{$preapod->preapod_tel}}</td>
                             <td>
-                                <a href="{{url('ver')}}" title="Ver Preinscripcion" class="btn btn-sm btn-outline-info"><i class="fa fa-file-text"></i></a>
+                                <a href="{{url('ver/'.$preapod->preapod_id)}}" title="Ver Preinscripcion" class="btn btn-sm btn-outline-info"><i class="fa fa-file-text"></i></a>
                             </td>
                         </tr>
                         @endforeach

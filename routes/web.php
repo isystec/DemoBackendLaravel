@@ -23,7 +23,7 @@ Route::resource('documentos','DocumentosController');
 Route::get('/home', 'HomeController@index')->name('home');
 
 //Rutas de Preinscripciones
-Route::get('ver','PreinscripcionesController@ver');
+Route::get('ver/{id}','PreinscripcionesController@ver');
 Route::get('prueba/{id}', 'PreinscripcionesController@prueba');
 
 //Rutas de Documentos
