@@ -33,5 +33,27 @@ class PrealumnosSeeder extends Seeder
             'prealum_gradopostula'=> '5',
             'prealum_est'=> '1'
         ]);
+        DB::table('prealumnos')->insert([
+            'prealum_tipo_documento'=> '1',
+            'prealum_identificacion'=> '70358462',
+            'prealum_ape'=> 'Lezacano Figueroa',
+            'prealum_nom'=> 'Axel',
+            'prealum_nacionalidad_id'=> '4',
+            'prealum_sexo'=> '1',
+            'prealum_fnac'=> '2020-03-14',
+            'prealum_gradopostula'=> '5',
+            'prealum_est'=> '1'
+        ]);
+        DB::table('prealumnos')->insert([
+            'prealum_tipo_documento'=> '1',
+            'prealum_identificacion'=> '75486235',
+            'prealum_ape'=> 'Sandoval Castro',
+            'prealum_nom'=> 'Milagros',
+            'prealum_nacionalidad_id'=> '3',
+            'prealum_sexo'=> '0',
+            'prealum_fnac'=> '2020-03-14',
+            'prealum_gradopostula'=> '5',
+            'prealum_est'=> '1'
+        ]);
     }
 }

@@ -31,7 +31,7 @@
                                 @endif
                             </td>
                             <td>
-                                <a href="{{url('ListarDocumentos')}}" title="Ver Preinscripcion" class="btn btn-sm btn-outline-info"><i class="fa fa-file-text"></i></a>
+                                <a href="{{url('listardocumentos')}}" title="Ver Preinscripcion" class="btn btn-sm btn-outline-info"><i class="fa fa-file-text"></i></a>
                             </td>
                         </tr>
                         @endforeach

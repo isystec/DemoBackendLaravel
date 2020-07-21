@@ -19,5 +19,13 @@ class PrealumnopreapoderadoSeeder extends Seeder
             'prealumn_preapod_prealum_id'=> '2',
             'prealumn_preapod_preapod_id'=> '2'
         ]);
+        DB::table('prealumnos_preapoderados')->insert([
+            'prealumn_preapod_prealum_id'=> '3',
+            'prealumn_preapod_preapod_id'=> '1'
+        ]);
+        DB::table('prealumnos_preapoderados')->insert([
+            'prealumn_preapod_prealum_id'=> '4',
+            'prealumn_preapod_preapod_id'=> '1'
+        ]);
     }
 }

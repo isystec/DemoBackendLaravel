@@ -47,4 +47,9 @@ class DocumentosController extends Controller
             ->get();
         return view('documentos.detalle',['alumnos' => $alumnos,'preapod'=> $prueba]);
     }
+
+    public function listardocumentos()
+    {
+        return view('documentos.listardocumentos');
+    }
 }
