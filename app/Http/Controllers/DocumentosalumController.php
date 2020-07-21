@@ -26,23 +26,23 @@ class DocumentosalumController extends Controller
 
         $file1 = $req->file('consta');
         $filename1 = time() . '_' . $file1->getClientOriginalName();
-        $file1->storeAs('documentosalum/'.$req->consta_matri, $filename1);
+        $file1->storeAs('documentosalum/', $filename1);
 
         $file2 = $req->file('reso_direc');
         $filename2 = time() . '_' . $file2->getClientOriginalName();
-        $file2->storeAs('documentosalum/'.$req->consta_matri, $filename2);
+        $file2->storeAs('documentosalum/', $filename2);
 
         $file3 = $req->file('copi_dni_apodymenor');
         $filename3 = time() . '_' . $file3->getClientOriginalName();
-        $file3->storeAs('documentosalum/'.$req->consta_matri, $filename3);
+        $file3->storeAs('documentosalum/', $filename3);
 
         $file4 = $req->file('foto_pasaporte');
         $filename4 = time() . '_' . $file4->getClientOriginalName();
-        $file4->storeAs('documentosalum/'.$req->consta_matri, $filename4);
+        $file4->storeAs('documentosalum/', $filename4);
 
         $file5 = $req->file('certi_noadeudo');
         $filename5 = time() . '_' . $file5->getClientOriginalName();
-        $file5->storeAs('documentosalum/'.$req->consta_matri, $filename5);
+        $file5->storeAs('documentosalum/', $filename5);
 
        // Creamos el objeto en la base de datos
         $rec_rol;
