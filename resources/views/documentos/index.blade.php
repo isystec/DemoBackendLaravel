@@ -11,20 +11,24 @@
                         <thead>
                         <tr>
                             <th>DNI</th>
-                            <th>Nombres</th>
                             <th>Apellidos</th>
+                            <th>Nombres</th>
+                            <th>Telefono</th>
                             <th>Opciones</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>70327395</td>
-                            <td>Juan</td>
-                            <td>Cubas Bravo</td>
-                            <td>
-                                <a href="{{url('verdocumento')}}" title="Ver documentacion" class="btn btn-sm btn-outline-info"><i class="fa fa-file-text"></i></a>
-                            </td>
-                        </tr>
+                        @foreach($preapoderados as $preapod)
+                            <tr>
+                                <td>{{$preapod->preapod_identificacion}}</td>
+                                <td>{{$preapod->preapod_ape}}</td>
+                                <td>{{$preapod->preapod_nom}}</td>
+                                <td>{{$preapod->preapod_tel}}</td>
+                                <td>
+                                    <a href="{{url('verdocumento/'.$preapod->preapod_id)}}" title="Ver Preinscripcion" class="btn btn-sm btn-outline-info"><i class="fa fa-file-text"></i></a>
+                                </td>
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>

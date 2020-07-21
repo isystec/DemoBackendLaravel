@@ -27,6 +27,6 @@ Route::get('ver/{id}','PreinscripcionesController@ver');
 Route::get('prueba/{id}', 'PreinscripcionesController@prueba');
 
 //Rutas de Documentos
-Route::get('verdocumento','DocumentosController@verdocumento');
+Route::get('verdocumento/{id}','DocumentosController@verdocumento');
 
 

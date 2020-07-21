@@ -1,14 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Preapoderados;
 use Illuminate\Http\Request;
+use DB;
 
 class DocumentosController extends Controller
 {
     public function index()
     {
-        return view('documentos.index');
+        $data = DB::table('Preapoderados')->get();
+        return view('documentos.index',['preapoderados'=>$data]);
     }
     public function create()
     {
@@ -34,8 +36,15 @@ class DocumentosController extends Controller
     {
         //
     }
-    public function verdocumento()
+    public function verdocumento($id)
     {
-        return view('documentos.detalle');
+        $prueba = Preapoderados::find($id);
+        $alumnos = DB::table('prealumnos_preapoderados')
+            ->join('prealumnos','prealumnos.prealum_id','prealumnos_preapoderados.prealumn_preapod_prealum_id')
+            ->join('paises','paises.pais_id','prealumnos.prealum_nacionalidad_id')
+            ->join('preapoderados','preapoderados.preapod_id','prealumnos_preapoderados.prealumn_preapod_preapod_id')
+            ->where('prealumnos_preapoderados.prealumn_preapod_preapod_id','=',$id)
+            ->get();
+        return view('documentos.detalle',['alumnos' => $alumnos,'preapod'=> $prueba]);
     }
 }

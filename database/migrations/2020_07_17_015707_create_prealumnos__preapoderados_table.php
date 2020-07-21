@@ -26,7 +26,6 @@ class CreatePrealumnosPreapoderadosTable extends Migration
                 ->onDelete('cascade');
         });
     }
-
     /**
      * Reverse the migrations.
      *

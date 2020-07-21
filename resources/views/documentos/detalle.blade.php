@@ -10,25 +10,31 @@
                     <table class="table table-responsive-sm table-hover table-sm" id="dataTable">
                         <thead>
                         <tr>
-                            <th>Documentos</th>
-                            <th>Archivo</th>
-                            <th>Estado</th>
+                            <th>Identificacion</th>
+                            <th>Apellidos</th>
+                            <th>Nombres</th>
+                            <th>Sexo</th>
                             <th>Opciones</th>
                         </tr>
                         </thead>
                         <tbody>
+                        @foreach($alumnos as $a)
                         <tr>
-                            <td>Constancia de Matricula del año anterior</td>
+                            <td>{{$a->prealum_identificacion}}</td>
+                            <td>{{$a->prealum_ape}}</td>
+                            <td>{{$a->prealum_nom}}</td>
                             <td>
-                                <a href="{{url('verdocumento')}}" title="Ver PDF" class="btn btn-sm btn-outline-danger"><i class="fa fa-file-pdf-o"></i></a>
+                                @if($a->prealum_sexo==0)
+                                    Femenino
+                                @else
+                                    Masculino
+                                @endif
                             </td>
                             <td>
-                                <a href="{{url('verdocumento')}}" title="Pendiente" class="btn btn-sm btn-outline-warning"><i class="fa fa-toggle-on">Pendiente</i></a>
-                            </td>
-                            <td>
-                                <a href="{{url('verdocumento')}}" title="Editar Estado" class="btn btn-sm btn-outline-warning"><i class="fa fa-pencil-square-o"></i></a>
+                                <a href="{{url('ListarDocumentos')}}" title="Ver Preinscripcion" class="btn btn-sm btn-outline-info"><i class="fa fa-file-text"></i></a>
                             </td>
                         </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
