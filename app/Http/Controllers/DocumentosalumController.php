@@ -108,6 +108,7 @@ class DocumentosalumController extends Controller
 
     public function listardocumentosalum()
     {
+        
         return view('documentosalum.listardocumentoalum');
     }
 }
