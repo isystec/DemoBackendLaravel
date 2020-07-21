@@ -43,7 +43,7 @@ class ApisController extends Controller
             $dataPreAlumno->prealum_identificacion = $request->prealum_identificacion;
             $dataPreAlumno->prealum_ape = $request->prealum_ape;
             $dataPreAlumno->prealum_nom = $request->prealum_nom;
-            $dataPreAlumno->prealum_identificacion = $request->prealum_identificacion;
+            $dataPreAlumno->prealum_nacionalidad_id = $request->prealum_nacionalidad_id;
             $dataPreAlumno->prealum_sexo = $request->prealum_sexo;
             $dataPreAlumno->prealum_fnac = date($request->prealum_fnac);
             $dataPreAlumno->prealum_gradopostula = $request->prealum_gradopostula;
@@ -123,7 +123,7 @@ class ApisController extends Controller
 
     public function APIExistIdentificacionPreAlumno(Request $request) {
         try {
-            $identificacion = $request->preapod_identificacion;
+            $identificacion = $request->prealum_identificacion;
             $pre_alum = Prealumnos::query()->where("prealum_identificacion", $identificacion)->get();
             $exist = false;
             if ($pre_alum->first()->exists()) {
