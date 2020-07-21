@@ -105,6 +105,10 @@
                   <a class="nav-link" href="{{url('documentos')}}">
                       <i class="nav-icon icon-home"></i>Documentos</a>
               </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{{url('documentosalum')}}">
+                      <i class="nav-icon icon-home"></i>Documentos Alumnos</a>
+              </li>
           </ul>
         </nav>
         <button class="sidebar-minimizer brand-minimizer" type="button"></button>

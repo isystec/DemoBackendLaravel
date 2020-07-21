@@ -19,6 +19,7 @@ Auth::routes();
 //Rutas del Controlador
 Route::resource('preinscripciones','PreinscripcionesController');
 Route::resource('documentos','DocumentosController');
+Route::resource('documentosalum','DocumentosalumController');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -29,5 +30,8 @@ Route::get('prueba/{id}', 'PreinscripcionesController@prueba');
 //Rutas de Documentos
 Route::get('verdocumento/{id}','DocumentosController@verdocumento');
 Route::get('listardocumentos/{id}','DocumentosController@listardocumentos');
+
+//Rutas alumno
+
 
 
