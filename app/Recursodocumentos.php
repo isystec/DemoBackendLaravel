@@ -14,6 +14,7 @@ class Recursodocumentos extends Model
         'nombre_recurso',
         'fechahora',
         'roles',
+        'tipodocument',
         'estado'
     ];
     protected $guarded = [];

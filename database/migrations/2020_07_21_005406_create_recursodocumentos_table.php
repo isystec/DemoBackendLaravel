@@ -19,6 +19,7 @@ class CreateRecursodocumentosTable extends Migration
             $table->string('nombre_recurso',180);
             $table->timestamp('fechahora');
             $table->unsignedinteger('roles')->index();
+            $table->integer('tipodocument');
             $table->integer('estado');
 
             $table->foreign('usuario')->references('prealum_id')

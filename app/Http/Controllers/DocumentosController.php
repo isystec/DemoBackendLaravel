@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Prealumnos;
 use App\Preapoderados;
+use App\Recursodocumentos;
 use Illuminate\Http\Request;
 use DB;
 
@@ -31,7 +32,10 @@ class DocumentosController extends Controller
     }
     public function update(Request $request, $id)
     {
-        //
+        $documento= Recursodocumentos::find($id);
+        $request->all();
+        $documento->update($request->all());
+        return redirect()->route('documentos.index')->with('status','Estado editado correctamente');
     }
     public function destroy($id)
     {
@@ -48,10 +52,13 @@ class DocumentosController extends Controller
             ->get();
         return view('documentos.detalle',['alumnos' => $alumnos,'preapod'=> $prueba]);
     }
-
     public function listardocumentos($id)
     {
         $prealumnos= Prealumnos::find($id);
-        return view('documentos.listardocumentos',['prealum'=>$prealumnos]);
+        $prealumdoc= DB::table('recursodocumentos')
+            ->join('prealumnos','prealumnos.prealum_id','recursodocumentos.usuario')
+            ->where('prealumnos.prealum_id','=',$id)
+            ->get();
+        return view('documentos.listardocumentos',['prealum'=>$prealumnos,'preadoc'=>$prealumdoc]);
     }
 }

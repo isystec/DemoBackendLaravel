@@ -56,30 +56,35 @@ class DocumentosalumController extends Controller
         $obj = Recursodocumentos::create([
             'usuario' => Auth::user()->id,
             'nombre_recurso' => $filename1,
+            'tipodocument'=> 1,
             'roles' => $rec_rol,
             'estado' => 0
         ]);
         $obj = Recursodocumentos::create([
             'usuario' => Auth::user()->id,
             'nombre_recurso' => $filename2,
+            'tipodocument'=> 2,
             'roles' => $rec_rol,
             'estado' => 0
         ]);
         $obj = Recursodocumentos::create([
             'usuario' => Auth::user()->id,
             'nombre_recurso' => $filename3,
+            'tipodocument'=> 3,
             'roles' => $rec_rol,
             'estado' => 0
         ]);
         $obj = Recursodocumentos::create([
             'usuario' => Auth::user()->id,
             'nombre_recurso' => $filename4,
+            'tipodocument'=> 4,
             'roles' => $rec_rol,
             'estado' => 0
         ]);
         $obj = Recursodocumentos::create([
             'usuario' => Auth::user()->id,
             'nombre_recurso' => $filename5,
+            'tipodocument'=> 5,
             'roles' => $rec_rol,
             'estado' => 0
         ]);
