@@ -17,10 +17,11 @@ class CreateRecursodocumentosTable extends Migration
             $table->bigIncrements('docum_id');
             $table->unsignedInteger('usuario')->index();
             $table->string('nombre_recurso',180);
-            $table->dateTime('fechahora');
+            $table->timestamp('fechahora');
             $table->unsignedinteger('roles')->index();
+            $table->integer('estado');
 
-            $table->foreign('usuario')->references('preapod_id')
+            $table->foreign('usuario')->references('prealum_id')
                 ->on('prealumnos')
                 ->onDelete('cascade');
             $table->foreign('roles')->references('id')

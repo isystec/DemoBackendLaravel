@@ -12,16 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('plantilla.plantilla');
+    return view('auth.login');
 });
 
 Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+
 //Rutas del Controlador
 Route::resource('preinscripciones','PreinscripcionesController');
 Route::resource('documentos','DocumentosController');
 Route::resource('documentosalum','DocumentosalumController');
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 //Rutas de Preinscripciones
 Route::get('ver/{id}','PreinscripcionesController@ver');

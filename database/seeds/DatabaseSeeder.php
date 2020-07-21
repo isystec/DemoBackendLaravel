@@ -15,7 +15,10 @@ class DatabaseSeeder extends Seeder
              PaisesSeeder::class,
              PreapoderadosSeeder::class,
              PrealumnosSeeder::class,
-             PrealumnopreapoderadoSeeder::class
+             PrealumnopreapoderadoSeeder::class,
+             RoleSeeder::class,
+             UserSeeder::class,
+             RoleUserSeeder::class
          ]);
     }
 }

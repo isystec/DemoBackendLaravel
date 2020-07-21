@@ -87,28 +87,26 @@
               <a class="nav-link" href="{{route('home')}}">
                 <i class="nav-icon icon-home"></i> Inicio</a>
               </li>
-              @if(Auth::user()->hasrole('apod'))
+              @if(Auth::user()->hasrole('secre'))
                   <li class="nav-item">
-                      <a class="nav-link" href="{{url('administrador')}}">
-                          <i class="nav-icon fa fa-user-circle-o"></i> Administradores</a>
+                      <a class="nav-link" href="{{url('preinscripciones')}}">
+                          <i class="nav-icon icon-home"></i>Pre-Inscripciones</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{url('usuarios')}}">
+                          <i class="nav-icon icon-home"></i>Usuarios</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{url('documentos')}}">
+                          <i class="nav-icon icon-home"></i>Documentos</a>
                   </li>
               @endif
-              <li class="nav-item">
-                  <a class="nav-link" href="{{url('preinscripciones')}}">
-                      <i class="nav-icon icon-home"></i>Pre-Inscripciones</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="{{url('usuarios')}}">
-                      <i class="nav-icon icon-home"></i>Usuarios</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="{{url('documentos')}}">
-                      <i class="nav-icon icon-home"></i>Documentos</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="{{url('documentosalum')}}">
-                      <i class="nav-icon icon-home"></i>Documentos Alumnos</a>
-              </li>
+              @if(Auth::user()->hasrole('prealum'))
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{url('documentosalum')}}">
+                          <i class="nav-icon icon-home"></i>Documentos Alumnos</a>
+                  </li>
+              @endif
           </ul>
         </nav>
         <button class="sidebar-minimizer brand-minimizer" type="button"></button>
