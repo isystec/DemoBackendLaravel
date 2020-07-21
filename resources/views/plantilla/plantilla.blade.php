@@ -103,7 +103,7 @@
               @endif
               @if(Auth::user()->hasrole('prealum'))
                   <li class="nav-item">
-                      <a class="nav-link" href="{{url('documentosalum')}}">
+                      <a class="nav-link" href="{{url('listadodedocumentos/'.Auth::user()->id)}}">
                           <i class="nav-icon icon-home"></i>Documentos Alumnos</a>
                   </li>
               @endif

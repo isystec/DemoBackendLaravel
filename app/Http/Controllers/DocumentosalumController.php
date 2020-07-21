@@ -16,7 +16,7 @@ class DocumentosalumController extends Controller
     }
     public function create()
     {
-        //
+        return view('documentosalum.create');
     }
     public function store(Request $req)
     {
@@ -110,5 +110,15 @@ class DocumentosalumController extends Controller
     {
 
         return view('documentosalum.listardocumentoalum');
+    }
+
+    public function iniciodocumento($id)
+    {
+        $prealumnos= Prealumnos::find($id);
+        $prealumdoc= DB::table('recursodocumentos')
+            ->join('prealumnos','prealumnos.prealum_id','recursodocumentos.usuario')
+            ->where('prealumnos.prealum_id','=',$id)
+            ->get();
+        return view('documentos.listardocumentos',['prealum'=>$prealumnos,'preadoc'=>$prealumdoc]);
     }
 }

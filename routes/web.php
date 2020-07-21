@@ -29,9 +29,10 @@ Route::get('prueba/{id}', 'PreinscripcionesController@prueba');
 
 //Rutas de Documentos
 Route::get('verdocumento/{id}','DocumentosController@verdocumento');
-Route::get('listardocumentos/{id}','DocumentosController@listardocumentos');
+Route::get('listardocumentos/{id}','DocumentosController@listardocumentos')->name('listardoc');
 
 //Rutas alumno
+Route::get('listadodedocumentos/{id}','DocumentosalumController@iniciodocumento');
 
 
 

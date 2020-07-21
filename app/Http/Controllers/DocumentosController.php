@@ -35,7 +35,7 @@ class DocumentosController extends Controller
         $documento= Recursodocumentos::find($id);
         $request->all();
         $documento->update($request->all());
-        return redirect()->route('documentos.index')->with('status','Estado editado correctamente');
+        return redirect()->route('listardoc',[$request->usuario])->with('status','Estado editado correctamente');
     }
     public function destroy($id)
     {

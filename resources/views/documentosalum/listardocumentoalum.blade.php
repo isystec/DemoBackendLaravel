@@ -15,66 +15,51 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <form action="{{url('documentosalum')}}" method="POST" enctype="multipart/form-data">
-                                        {{csrf_field()}}
-                                        <table class="table table-responsive-sm table-bordered">
-                                            <thead>
+                                    <table class="table table-responsive-sm table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Documentos</th>
+                                                <th>Subir Archivos</th>
+                                                <th>Estado</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach($preadoc as $pad)
                                                 <tr>
-                                                    <th>Documentos</th>
-                                                    <th>Subir archivo</th>
-                                                    <th>Estado</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Constancia de matricula del año anterios</td>
                                                     <td>
-                                                        <input type="file" name="consta" accept=".pdf,.doc,.JPG,.PNG" required>
+                                                        @if($pad->tipodocument==1)
+                                                            <p style="font-variant: small-caps;">Constancia de matricula del año anterior</p>
+                                                        @elseif($pad->tipodocument==2)
+                                                            <p style="font-variant: small-caps;">Resolucion Directorias</p>
+                                                        @elseif($pad->tipodocument==3)
+                                                            <p style="font-variant: small-caps;">Copias de DNI del Titular o Apoderado y Menor</p>
+                                                        @elseif($pad->tipodocument==4)
+                                                            <p style="font-variant: small-caps;">Foto/Pasaporte con fondo Blanco</p>
+                                                        @else
+                                                            <p style="font-variant: small-caps;">Certificado o Constancia de no Adeudo/Colegio Particular</p>
+                                                        @endif
                                                     </td>
                                                     <td>
-                                                        <a href="" title="" class="btn btn-sm btn-outline-warning"><i class="fa-bell-slash-o">Pendiente</i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Resolucion Directorial</td>
-                                                    <td>
-                                                        <input type="file" name="reso_direc" id="" accept=".pdf,.doc,.JPG,.PNG" required>
+                                                        <a href="{{url('verdocumento')}}" title="Ver PDF" class="btn btn-sm btn-outline-danger"><i class="fa fa-file-pdf-o"></i></a>
+                                                        <a href="" class="btn btn-sm btn-outline-success"><i class="fa fa-download"></i></a>
                                                     </td>
                                                     <td>
-                                                        <a href="" title="" class="btn btn-sm btn-outline-warning"><i class="fa-bell-slash-o">Pendiente</i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Copias de DNI del Titular o Apoderado y Menor</td>
-                                                    <td>
-                                                        <input type="file" name="copi_dni_apodymenor" id="" accept=".JPG,.PNG" required>
-                                                    </td>
-                                                    <td>
-                                                        <a href="" title="" class="btn btn-sm btn-outline-warning"><i class="fa-bell-slash-o">Pendiente</i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><b>4 </b>Fotos<b>/</b>Pasaporte con fondo blanco</td>
-                                                    <td>
-                                                        <input type="file" name="foto_pasaporte" id="" accept=".JPG,.PNG" required>
+                                                        @if($pad->estado==0)
+                                                            <a href="{{url('verdocumento')}}" title="Pendiente" class="btn btn-sm btn-outline-warning"><i class="fa fa-toggle-on">Pendiente</i></a>
+                                                        @elseif($pad->estado==1)
+                                                            <a href="{{url('verdocumento')}}" title="Pendiente" class="btn btn-sm btn-outline-danger"><i class="fa fa-toggle-on">Rechazadp</i></a>
+                                                        @else
+                                                            <a href="{{url('verdocumento')}}" title="Pendiente" class="btn btn-sm btn-outline-success"><i class="fa fa-toggle-on">Aceptado</i></a>
+                                                        @endif
                                                     </td>
                                                     <td>
-                                                        <a href="" title="" class="btn btn-sm btn-outline-warning"><i class="fa-bell-slash-o">Pendiente</i></a>
+                                                        <a data-target="#modal-delete-{{$pad->docum_id}}" title="eliminar recurso" data-toggle="modal" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i></a>
+                                                        @include('documentos.edit')
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td>Certificado o Constancia de no Adeudo<b>/</b>Colegio Particular</td>
-                                                    <td>
-                                                        <input type="file" name="certi_noadeudo" accept=".pdf,.doc,.JPG,.PNG" required>
-                                                    </td>
-                                                    <td>
-                                                        <a href="" title="" class="btn btn-sm btn-outline-warning"><i class="fa-bell-slash-o">Pendiente</i></a>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <input type="submit" class="btn btn-primary btn-lg btn-block" value="Subir">
-                                    </form>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>

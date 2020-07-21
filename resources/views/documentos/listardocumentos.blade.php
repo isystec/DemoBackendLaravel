@@ -2,6 +2,11 @@
 @section('contenido')
     <div class="row mt-4">
         <div class="col-lg-12">
+            <div class="col-lg-12">
+                @if(count($preadoc)==0)
+                    <a href="{{url('documentosalum/create')}}" class="btn btn-primary">Crear</a>
+                @endif
+            </div>
             <div class="card">
                 <div class="card-header">
                     <Strong>Documento del Alumno : {{$prealum->prealum_ape.' '.$prealum->prealum_nom}}</Strong>
@@ -32,10 +37,7 @@
                                         <p style="font-variant: small-caps;">Certificado o Constancia de no Adeudo/Colegio Particular</p>
                                     @endif
                                 </td>
-                                <td>
-                                    <a href="{{url('verdocumento')}}" title="Ver PDF" class="btn btn-sm btn-outline-danger"><i class="fa fa-file-pdf-o"></i></a>
-                                    <a href="" class="btn btn-sm btn-outline-success"><i class="fa fa-download"></i></a>
-                                </td>
+                                <td>{{$pad->nombre_recurso}}</td>
                                 <td>
                                     @if($pad->estado==0)
                                         <a href="{{url('verdocumento')}}" title="Pendiente" class="btn btn-sm btn-outline-warning"><i class="fa fa-toggle-on">Pendiente</i></a>
@@ -45,10 +47,15 @@
                                         <a href="{{url('verdocumento')}}" title="Pendiente" class="btn btn-sm btn-outline-success"><i class="fa fa-toggle-on">Aceptado</i></a>
                                     @endif
                                 </td>
+
                                 <td>
+                                    <a href="" class="btn btn-warning"><i class="fa fa-pencil-square-o"></i></a>
+                                    @if(Auth::user()->hasrole('secre'))
                                     <a data-target="#modal-delete-{{$pad->docum_id}}" title="eliminar recurso" data-toggle="modal" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i></a>
                                     @include('documentos.edit')
+                                    @endif
                                 </td>
+
                             </tr>
                         @endforeach
                         </tbody>

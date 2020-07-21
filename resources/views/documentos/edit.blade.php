@@ -21,6 +21,7 @@
                     </div>
                 @endif
                 <div class="modal-body">
+                    <input type="hidden" name="usuario" value="{{$pad->usuario}}">
                     <label class="col-md-4 col-form-label">Estado</label>
                     <div class="col-md-7">
                         <select class="form-control" id="" name="estado">
