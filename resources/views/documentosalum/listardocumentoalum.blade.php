@@ -15,69 +15,71 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <table class="table table-responsive-sm table-bordered">
-                                        <thead>
-                                        <tr>
-                                            <th>Documentos</th>
-                                            <th>Subir archivo</th>
-                                            <th>Estado</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>Constancia de matricula del año anterios</td>
-                                            <td>
-                                                <a href="" title="" class="btn btn-sm btn-outline-success"><i class="fa fa-upload"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="" title="" class="btn btn-sm btn-outline-warning"><i class="fa-bell-slash-o">Pendiente</i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Resolucion Directorial</td>
-                                            <td>
-                                                <a href="" title="" class="btn btn-sm btn-outline-success"><i class="fa fa-upload"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="" title="" class="btn btn-sm btn-outline-warning"><i class="fa-bell-slash-o">Pendiente</i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Copias de DNI del Titular o Apoderado y Menos</td>
-                                            <td>
-                                                <a href="" title="" class="btn btn-sm btn-outline-success"><i class="fa fa-upload"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="" title="" class="btn btn-sm btn-outline-warning"><i class="fa-bell-slash-o">Pendiente</i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>4 </b>Fotos<b>/</b>Pasaporte con fondo blanco</td>
-                                            <td>
-                                                <a href="" title="" class="btn btn-sm btn-outline-success"><i class="fa fa-upload"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="" title="" class="btn btn-sm btn-outline-warning"><i class="fa-bell-slash-o">Pendiente</i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Certificado o Constancia de no Adeudo<b>/</b>Colegio Particular</td>
-                                            <td>
-                                                <a href="" title="" class="btn btn-sm btn-outline-success"><i class="fa fa-upload"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href="" title="" class="btn btn-sm btn-outline-warning"><i class="fa-bell-slash-o">Pendiente</i></a>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
+                                    <form action="" >
+                                        <table class="table table-responsive-sm table-bordered">
+                                            <thead>
+                                            <tr>
+                                                <th>Documentos</th>
+                                                <th>Subir archivo</th>
+                                                <th>Estado</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>Constancia de matricula del año anterios</td>
+                                                <td>
+                                                    <input type="file" name="" id="" accept=".pdf,.doc,.JPG,.PNG" required>
+                                                </td>
+                                                <td>
+                                                    <a href="" title="" class="btn btn-sm btn-outline-warning"><i class="fa-bell-slash-o">Pendiente</i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Resolucion Directorial</td>
+                                                <td>
+                                                    <input type="file" name="" id="" accept=".pdf,.doc,.JPG,.PNG" required>
+                                                </td>
+                                                <td>
+                                                    <a href="" title="" class="btn btn-sm btn-outline-warning"><i class="fa-bell-slash-o">Pendiente</i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Copias de DNI del Titular o Apoderado y Menos</td>
+                                                <td>
+                                                    <input type="file" name="" id="" accept=".JPG,.PNG" required>
+                                                </td>
+                                                <td>
+                                                    <a href="" title="" class="btn btn-sm btn-outline-warning"><i class="fa-bell-slash-o">Pendiente</i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>4 </b>Fotos<b>/</b>Pasaporte con fondo blanco</td>
+                                                <td>
+                                                    <input type="file" name="" id="" accept=".JPG,.PNG" required>
+                                                </td>
+                                                <td>
+                                                    <a href="" title="" class="btn btn-sm btn-outline-warning"><i class="fa-bell-slash-o">Pendiente</i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Certificado o Constancia de no Adeudo<b>/</b>Colegio Particular</td>
+                                                <td>
+                                                    <input type="file" accept=".pdf,.doc,.JPG,.PNG" required>
+                                                </td>
+                                                <td>
+                                                    <a href="" title="" class="btn btn-sm btn-outline-warning"><i class="fa-bell-slash-o">Pendiente</i></a>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="card-footer">
-                    <a href="{{url('documentos')}}" class="btn btn-primary">Subir</a>
+                    <a href="{{url('')}}" class="btn btn-primary btn-lg btn-block">Subir</a>
                 </div>
             </div>
         </div>

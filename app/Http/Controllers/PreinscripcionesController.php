@@ -49,12 +49,4 @@ class PreinscripcionesController extends Controller
             ->get();
         return view('preinscripciones.detalle',['alumnos' => $alumnos,'preapod'=> $prueba]);
     }
-    public function prueba($id)
-    {
-        $data = DB::table('prealumnos_preapoderados')
-            ->join('prealumnos','prealumnos.prealum_id','prealumnos_preapoderados.prealumn_preapod_prealum_id')
-            ->where('prealumnos_preapoderados.prealumn_preapod_preapod_id','=',$id)
-            ->get();
-        print_r($data);
-    }
 }

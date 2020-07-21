@@ -4,7 +4,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <Strong>Documentos de los Alumnos</Strong>
+                    <Strong>Pre-Alumnos</Strong>
                 </div>
                 <div class="card-body">
                     <table class="table table-responsive-sm table-hover table-sm" id="dataTable">
