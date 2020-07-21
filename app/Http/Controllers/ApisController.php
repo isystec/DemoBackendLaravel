@@ -123,7 +123,7 @@ class ApisController extends Controller
 
     public function APIExistIdentificacionPreAlumno(Request $request) {
         try {
-            $identificacion = $request->preapod_identificacion;
+            $identificacion = $request->prealum_identificacion;
             $pre_alum = Prealumnos::query()->where("prealum_identificacion", $identificacion)->get();
             $exist = false;
             if ($pre_alum->first()->exists()) {
