@@ -4,7 +4,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <Strong>Documentos del Alumno :</Strong>
+                    <Strong>Documento del Alumno : {{$prealum->prealum_ape.' '.$prealum->prealum_nom}}</Strong>
                 </div>
                 <div class="card-body">
                     <table class="table table-responsive-sm table-bordered">
@@ -79,6 +79,9 @@
                         </tr>
                         </tbody>
                     </table>
+                </div>
+                <div class="card-footer">
+                    <a href="{{url('documentos')}}" class="btn btn-danger">Cancelar</a>
                 </div>
             </div>
         </div>

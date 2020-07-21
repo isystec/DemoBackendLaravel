@@ -4,7 +4,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <Strong>Documentos del alumno: </Strong>
+                    <Strong>Documentos de los Alumnos</Strong>
                 </div>
                 <div class="card-body">
                     <table class="table table-responsive-sm table-hover table-sm" id="dataTable">
@@ -31,7 +31,7 @@
                                 @endif
                             </td>
                             <td>
-                                <a href="{{url('listardocumentos')}}" title="Ver Preinscripcion" class="btn btn-sm btn-outline-info"><i class="fa fa-file-text"></i></a>
+                                <a href="{{url('listardocumentos/'.$a->prealum_id)}}" title="Ver Preinscripcion" class="btn btn-sm btn-outline-info"><i class="fa fa-file-text"></i></a>
                             </td>
                         </tr>
                         @endforeach

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Prealumnos;
 use App\Preapoderados;
 use Illuminate\Http\Request;
 use DB;
@@ -48,8 +49,9 @@ class DocumentosController extends Controller
         return view('documentos.detalle',['alumnos' => $alumnos,'preapod'=> $prueba]);
     }
 
-    public function listardocumentos()
+    public function listardocumentos($id)
     {
-        return view('documentos.listardocumentos');
+        $prealumnos= Prealumnos::find($id);
+        return view('documentos.listardocumentos',['prealum'=>$prealumnos]);
     }
 }
